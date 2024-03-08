@@ -4,6 +4,9 @@ import random
 
 # Використовую цей алгоритм, бо сортувати весь список заради одного значення є меньш ефективним рішенням
 # А median of medians більш довгий(при перевірці)
+#Використовував в основному ці 2 ресурси:
+#https://en.wikipedia.org/wiki/Quickselect
+#https://habr.com/ru/articles/346930/
 def partition(digit_list):
     p = random.randint(0, len(digit_list) - 1)
     pivot = digit_list[p]
