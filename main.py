@@ -62,7 +62,12 @@ def main():
 
         previous_digit = digit
 
-    median = select_median(digit_list, len(digit_list) // 2)
+    if len(digit_list) % 2 == 0:
+        median_1 = select_median(digit_list, len(digit_list) // 2 - 1)
+        median_2 = select_median(digit_list, len(digit_list) // 2)
+        median = (median_1+median_2)/2
+    else:
+        median = select_median(digit_list, len(digit_list) // 2)
 
     end_time = time.time()
     execution_time = end_time - start_time
