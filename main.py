@@ -2,7 +2,9 @@ import time
 import random
 
 
-def Partition(digit_list):
+# Використовую цей алгоритм, бо сортувати весь список заради одного значення є меньш ефективним рішенням
+# А median of medians більш довгий(при перевірці)
+def partition(digit_list):
     p = random.randint(0, len(digit_list) - 1)
     pivot = digit_list[p]
     left, right = [], []
@@ -16,7 +18,7 @@ def Partition(digit_list):
 
 
 def select_median(digit_list, k):
-    (left, pivot, right) = Partition(digit_list)
+    (left, pivot, right) = partition(digit_list)
     if len(left) == k:
         result = pivot
     elif len(left) > k:
